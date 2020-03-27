@@ -1,0 +1,110 @@
+/*keeps the overall 'style' the same as the orignional disign for the site*/
+body {
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  background-color: rgb(121, 185,198);
+}
+
+/*I didn't like the gray box, and I adjusted the spaceing to be more responsive IMO*/
+.jumbotron {
+  background-color: rgb(121, 185,198);
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 0;
+}
+
+/*I wanted the 'DIGITAL HEAVEN' text to be much bigger */
+.display-4 {
+  color: white;
+  font-weight: bold;
+  font-size: 6rem;
+}
+
+/* just color fixing */
+.lead {
+  color: black;
+}
+
+/* just color fixing */
+.btn {
+  color: white;
+}
+
+/* I didn't like the dropdown items being all uppercase like the rest of the page */
+.dropdown-item {
+  text-transform: none;
+}
+
+/* just color fixing */
+#navFDM {
+  color: white;
+  font-weight: bold;
+}
+
+#navFDM:hover {
+  color: black;
+}
+
+/* I wanted the 'get a quote' button centered and this is what I tried first */
+.col-lg-12 {
+  text-align: center;
+}
+
+/* I wanted the 'DIGITAL HEAVEN' to adjust down in size a bit for smaller screens */
+@media screen and (max-width: 767px) {
+  .display-4 {
+    font-size: 5rem;
+  }
+}
+
+
+/* old code for reference
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  background-color: rgb(121, 185,198);
+  color: white;
+}
+#top-left {
+   font-size: unset;
+   font-weight: bold;
+}
+#small-center {
+  font-size: 17px;
+  color: black; 
+  margin: 0;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#big-center {
+  font-size: 100px; 
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  overflow: hidden;
+}
+#boxed-center {
+  font-size: unset;
+  font-weight: bold; 
+  height: 25px;
+  padding: 10px 10px;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid white;
+  border-radius: 5px;
+}
+*/
+
