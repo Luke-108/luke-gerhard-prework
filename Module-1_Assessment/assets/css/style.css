@@ -1,9 +1,51 @@
 body {
   box-sizing: border-box;
+  /*background-image: url("../images/connect/connect.png");*/
 }
 
 #test_Subject {
   background-color: red;
   width: 960px;
   margin: 0 auto;
+  padding: 5px;
+}
+
+/*Teal color (used for headings and backgrounds)*/
+.tealBg {
+  background-color: #4aaaa5;
+}
+
+/*Regular font color (used for paragraphs and all text besides the headings):*/
+.grayFont {
+  color: #777777;
+}
+
+/*Main header background color, Main content background color*/
+.whiteBg {
+  background-color: #ffffff;
+}
+
+/*Main header border color*/
+.grayBorder {
+  border-color: #cccccc;
+}
+
+/*Footer background color*/
+.dkGrayBg{
+  background-color: #666666;
+}
+
+/*Main content border color*/
+.ltGrayBorder {
+  border-color: #dddddd;
+}
+
+/*For heading fonts*/
+.headingFont {
+  font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+/*For all other fonts*/
+.otherFont {
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
