@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  /*background-image: url("../images/connect/connect.png");*/
+  background-image: url("../images/connect/connect.png");
 }
 
 #test_Subject {
@@ -48,4 +48,8 @@ body {
 /*For all other fonts*/
 .otherFont {
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#backgroundNavbar {
+background-color: red;
 }
