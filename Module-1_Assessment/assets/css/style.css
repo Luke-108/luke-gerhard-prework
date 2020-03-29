@@ -77,3 +77,14 @@ background-color: red;
 .nav-link {
   color: #777777;
 }
+
+.footer {
+  font-size: small;
+  border-top: 5px solid #4aaaa5;
+  color: #dddddd;
+}
+
+.main-container {
+  padding-bottom: 50px;
+}
+
