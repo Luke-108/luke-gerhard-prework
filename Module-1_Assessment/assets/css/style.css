@@ -54,6 +54,7 @@ body {
 /*For all other fonts*/
 .otherFont {
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #777777;
 }
 
 #backgroundNavbar {
