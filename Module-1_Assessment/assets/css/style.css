@@ -85,6 +85,40 @@ background-color: red;
 }
 
 .main-container {
-  padding-bottom: 50px;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+
+.sub-main-container {
+  background-color: #ffffff;
+  padding-top: 1rem;
+}
+
+.header-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.border-bottom {
+  border-bottom-width: 2px !important;
+  border-color: #cccccc !important;
+}
+
+.border {
+  border-color: #dddddd !important;
+}
+
+#profile-image {
+  width: 247px;
+  height: 185px;
+  float: left;
+  padding-right: 15px;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  border-color: #dddddd;
 }
 
