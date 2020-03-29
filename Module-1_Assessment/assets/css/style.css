@@ -10,9 +10,15 @@ body {
   padding: 5px;
 }
 
-/*Teal color (used for headings and backgrounds)*/
+/*Teal color (used for backgrounds)*/
 .tealBg {
   background-color: #4aaaa5;
+  padding: 20px;
+}
+
+/*Teal color (used for headings)*/
+.tealFont {
+  color: #4aaaa5;
 }
 
 /*Regular font color (used for paragraphs and all text besides the headings):*/
@@ -52,4 +58,22 @@ body {
 
 #backgroundNavbar {
 background-color: red;
+}
+
+.navbar-nav { 
+  flex-direction: row;
+}
+
+.navbar-nav li:not(:last-child){
+  border-right: 1px solid #cccccc;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #777777;
 }
