@@ -13,7 +13,6 @@ body {
 /*Teal color (used for backgrounds)*/
 .tealBg {
   background-color: #4aaaa5;
-  padding: 20px;
 }
 
 /*Teal color (used for headings)*/
@@ -55,6 +54,10 @@ body {
 .otherFont {
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
   color: #777777;
+}
+
+#myBrand {
+  padding: 20px;
 }
 
 #backgroundNavbar {
@@ -123,3 +126,15 @@ hr {
   border-color: #dddddd;
 }
 
+label {
+  font-size: 1.2rem;
+}
+
+#submitBtn {
+  color: #ffffff;
+  font-size: 1.2rem;
+  border-radius: 0;
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-bottom: 2rem;
+}
