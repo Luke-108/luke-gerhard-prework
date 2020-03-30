@@ -138,3 +138,26 @@ label {
   padding-left: 24px;
   margin-bottom: 2rem;
 }
+
+.card-img {
+  border-radius: 0;
+}
+
+.card-title {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #ffffff;
+  position: relative;
+  top: 78%;
+  padding: 4%;
+}
+
+.card-img-overlay {
+  padding: 0.94rem;
+}
+
+.portfolio-col {
+  margin-bottom: 2rem;
+}
