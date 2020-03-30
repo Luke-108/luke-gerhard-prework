@@ -3,13 +3,6 @@ body {
   background-image: url("../images/connect/connect.png");
 }
 
-#test_Subject {
-  background-color: red;
-  width: 960px;
-  margin: 0 auto;
-  padding: 5px;
-}
-
 /*Teal color (used for backgrounds)*/
 .tealBg {
   background-color: #4aaaa5;
@@ -20,30 +13,27 @@ body {
   color: #4aaaa5;
 }
 
-/*Regular font color (used for paragraphs and all text besides the headings):*/
-.grayFont {
+/*Regular font color (used for paragraphs and all text besides the headings)
   color: #777777;
-}
+*/
 
 /*Main header background color, Main content background color*/
 .whiteBg {
   background-color: #ffffff;
 }
 
-/*Main header border color*/
-.grayBorder {
+/*Main header border color
   border-color: #cccccc;
-}
+*/
 
 /*Footer background color*/
 .dkGrayBg{
   background-color: #666666;
 }
 
-/*Main content border color*/
-.ltGrayBorder {
+/*Main content border color
   border-color: #dddddd;
-}
+*/
 
 /*For heading fonts*/
 .headingFont {
@@ -56,61 +46,71 @@ body {
   color: #777777;
 }
 
+/*fixes spaceing for brand tab*/
 #myBrand {
   padding: 20px;
 }
 
-#backgroundNavbar {
-background-color: red;
-}
-
-.navbar-nav { 
-  flex-direction: row;
-}
-
-.navbar-nav li:not(:last-child){
-  border-right: 1px solid #cccccc;
-}
-
+/*fixes size and style of brand tab text*/
 .navbar-brand {
   color: #ffffff;
   font-size: 2em;
   font-weight: bold;
 }
 
+/*fixes spacing for navbar links*/
+.navbar-nav { 
+  flex-direction: row;
+  line-height: 0;
+}
+
+/*makes divider lines for navbar links*/
+.navbar-nav li:not(:last-child){
+  border-right: 1px solid #cccccc;
+}
+
+/*fixes color for navbar links*/
 .nav-link {
   color: #777777;
 }
 
+/*fixes format for footer*/
 .footer {
   font-size: small;
   border-top: 5px solid #4aaaa5;
   color: #dddddd;
 }
 
+/*fixes the spacing between the main container and the header and footer*/
 .main-container {
   margin-bottom: 80px;
   margin-top: 20px;
 }
 
+/*sets up the alignment I wanted*/
 .sub-main-container {
   background-color: #ffffff;
   padding-top: 1rem;
 }
 
+/*lines up the edge of the brand tab where I want it*/
 .header-container {
   padding-left: 0;
   padding-right: 0;
 }
+
+/*sets width and color of the header's bottom border*/
 .border-bottom {
   border-bottom-width: 2px !important;
   border-color: #cccccc !important;
 }
 
+/*sets color of the sub-main-container's border*/
 .border {
   border-color: #dddddd !important;
 }
 
+/*specifies the size of my profile image since it was too big*/
 #profile-image {
   width: 247px;
   height: 185px;
@@ -118,6 +118,7 @@ background-color: red;
   padding-right: 15px;
 }
 
+/*sets up the horizontal line that splits the content from the heading*/
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -126,10 +127,12 @@ hr {
   border-color: #dddddd;
 }
 
+/*enlarges the text for the contact page to where I wanted it*/
 label {
   font-size: 1.2rem;
 }
 
+/*fixes the submit button's color, style, shape etc.*/
 #submitBtn {
   color: #ffffff;
   font-size: 1.2rem;
@@ -139,10 +142,12 @@ label {
   margin-bottom: 2rem;
 }
 
+/*changes the card from rounded corners to sharp corners*/
 .card-img {
   border-radius: 0;
 }
 
+/*fixes the spacing, positioning, color etc. for the text that goes over the images in the portfolio gallery*/
 .card-title {
   text-align: center;
   overflow: hidden;
@@ -154,10 +159,12 @@ label {
   padding: 4%;
 }
 
+/*lets the background reache the edge of the picture behind it*/
 .card-img-overlay {
   padding: 0.94rem;
 }
 
+/*allows some extra space between the portfolio pictures*/
 .portfolio-col {
   margin-bottom: 2rem;
 }
