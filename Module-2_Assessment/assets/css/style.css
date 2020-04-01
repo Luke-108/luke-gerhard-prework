@@ -1,0 +1,10 @@
+#outsideContainer {
+  text-align: center;
+}
+#gameName {
+  height: 75px;
+  width: 300px;
+  background-color: lightgreen;
+  text-align: center;
+  margin: 0 auto;
+}
