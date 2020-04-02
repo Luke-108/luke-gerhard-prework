@@ -1,6 +1,7 @@
+// the theme of my game was "colors"
+
 //declaring a bunch of my variables
 let winCount = 0;
-let counter = 0; //i'll probably take this out later
 let letterBankEn = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 let wordBank = ["COLORS", "BLUE", "ORANGE", "LIGHT", "GREEN", "BROWN", "MAROON", "MUTED", 
 "COOL", "YELLOW", "RED", "WHITE", "DARK", "BRIGHT", "BLACK", "PURPLE", "WARM", "TAN", 
@@ -9,8 +10,8 @@ let alreadyGuessedArray = [];
 let alreadyGuessedDisplay = [];
 let gameState = 'PLAYING';
 let next = 0;
-let guessesRemaining = 12;// if implimented a dificulty setting, this might be smaller
-let currentWord= wordBank[next];// need to make this change every new game somehow
+let guessesRemaining = 12;// an implimented difficulty setting might change this
+let currentWord= wordBank[next];
 let winCheck = '';
 let currentWordArray= currentWord.split('');
 let currentWordDisplay = currentWordArray.slice();
@@ -18,71 +19,89 @@ for (let i = 0; i<currentWordArray.length; i++){
   currentWordDisplay[i] = '_';
 }
 
-/*this function does most (or all?) of what I want my program to do: check a letter
-and update the gamestate to match if it was a good guess or not.*/
+/*this function does most of what I want my program to do: check a letter
+and update the game display depending on if the guess was good or not.*/
 const heavyLiftFunction = function(event) {
   
+  //if the player just won or lost, resets with the next word.
   if (gameState != 'PLAYING') {resetGame();}
 
+  //stors the letter of whatever key was pressed and makes it uppercase.
   let tempKey = '';
   tempKey = `${event.key.toUpperCase()}`;
-  counter++; // i'll probably end up removing this later
-  messageDisplay1.innerText = `you have input ${counter} letters.`; // take this out later
-  messageDisplay2.innerText = `the last letter guessed was ${tempKey}.`; // remove later
+  messageDisplay1.innerText = '';
+
+  //checks to see if the key pressed was a letter.
   if (!letterBankEn.includes(tempKey)){
     console.log('keypress was not a letter.');
   }
+  //checks to see if the key pressed was already guessed.
   else if (alreadyGuessedArray.includes(tempKey)){
     console.log('keypress was already guessed.');
+    messageDisplay1.innerHTML = `(You already guessed ${tempKey}!)</p><p><br>`;
   }
+  /*checks to see if the guess was correct. If it was, it updates the display
+   of the current word filling in any matching letters using a 'for' loop. If the 
+   guess was not correct, it updates the display of the incorrect guesses, and 
+   updates the number of guesses remaining.*/
   else if (currentWordArray.includes(tempKey)){
-    //modify wordDisplay to user to include tempKey everywhere it occurs
     for (let i = 0; i<currentWordArray.length; i++){
       if (currentWordArray[i] == tempKey){ currentWordDisplay[i] = tempKey;}
     }
     alreadyGuessedArray.push(tempKey);
-    // if alreadyGA is filled with objects-" letter: 'A' color: 'green' " for example
-    // how would I add a new object with letter: ${tempKey} and color 'green' or 'red'?
     console.log('keypress was a correct guess.');
+    messageDisplay2.innerText = `the last letter guessed was ${tempKey}.`;
   }
   else {
     guessesRemaining--;
     alreadyGuessedArray.push(tempKey);
     alreadyGuessedDisplay.push(tempKey);
-    // here i'd wan't it to be red if i figure out the object thing.
-    // alternitavely i can have a "hidden" array that the user doesn't see and an
-    // almost matching array that only gets updated on fails that is used to show the user
     console.log('keypress was an incorrect guess.');
+    messageDisplay2.innerText = `the last letter guessed was ${tempKey}.`;
   }
+
+  //Displays relevant information about the gamestate to the user
   messageDisplay3.innerText = `Number of Guesses Remaining: ${guessesRemaining}`;
   messageDisplay4.innerText = `Incorrect Guesses: ${alreadyGuessedDisplay}`;
-  messageDisplay5.innerText = `Wins: ${winCount}.`;
+  messageDisplay5.innerText = `Wins: ${winCount}`;
   messageDisplay6.innerText = `your word: ${currentWordDisplay.join(' ')}`;
   
+  /*sets the variable 'winCheck' equal to the displayed word as far as the user has
+  revealed it, then checks to see if it has been fully revealed (in which case the 
+  user has won) or else if the guesses remaining have reached 0 (in which case the 
+  user has lost). In either case, it updates 'gameState' to match and displays a 
+  message to the user. On the next key press by the user, 'heavyLiftFunction' will
+  check the 'gameState' and reset the game.
+  NOTE: if neither condition is met, then 'gameState' is not changed and no messages
+  will be displayed */
   winCheck = currentWordDisplay.join('');
-
   if (winCheck === currentWord){
     gameState = 'WON';
     winCount++;
     console.log('they\'ve won the game.');
     messageDisplay7.innerText = 'YOU WIN!!!';
-    next++;
+    next++; // sets up the next word in the word bank.
   }
   else if (guessesRemaining === 0){
     gameState = 'LOST'
     console.log('they\'ve lost the game.');
-    messageDisplay7.innerText = 'uh oh, you\'ve lost!';
-    next++;
+    messageDisplay7.innerText = 'Uh oh, you\'ve lost!';
+    next++; // sets up the next word in the word bank.
   }
 
 }
 
+//this function resets the game. It DOES NOT reset the win counter however.
 const resetGame = function() {
+  
+  /*if the user has gotten through the whole wordbank, it displays a message and then
+  starts over at the beginning of the list */
   if (next === wordBank.length) {
     next = 0;
     messageDisplay7.innerText = 'looks like you\'ve gone through the whole list! See if you can remember them all!';
   }
   else {messageDisplay7.innerText = '';}
+
   alreadyGuessedArray = [];
   alreadyGuessedDisplay = [];
   gameState = 'PLAYING';
