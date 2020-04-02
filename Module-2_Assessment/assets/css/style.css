@@ -1,10 +1,51 @@
+body {
+  box-sizing: border-box;
+  background: linear-gradient(to right,
+  red, orange, yellow, green, blue, indigo, violet);
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
 #outsideContainer {
   text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px;
 }
 #gameName {
-  height: 75px;
-  width: 300px;
-  background-color: lightgreen;
+  background: linear-gradient(to bottom,
+  red, yellow);
   text-align: center;
-  margin: 0 auto;
+  font-weight: bold;
 }
+@media screen and (min-width: 900px) {
+
+#outsideContainer {
+  margin: 10% 20%;
+}
+#gameName {
+  height: 4rem;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 3rem;
+}
+p {
+  font-size: 1.5rem;
+}
+
+}
+
+@media screen and (max-width: 899px) {
+
+  #outsideContainer {
+    margin: 10% 0%;
+  }
+  #gameName {
+    height: 3.4rem;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 2.4rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  
+  }
