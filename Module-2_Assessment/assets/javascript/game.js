@@ -2,11 +2,15 @@
 let winCount = 0;
 let counter = 0; //i'll probably take this out later
 let letterBankEn = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+let wordBank = ["COLORS", "BLUE", "ORANGE", "LIGHT", "GREEN", "BROWN", "MAROON", "MUTED", 
+"COOL", "YELLOW", "RED", "WHITE", "DARK", "BRIGHT", "BLACK", "PURPLE", "WARM", "TAN", 
+"GOLDEN", "PINK", "AQUAMARINE"]
 let alreadyGuessedArray = [];
 let alreadyGuessedDisplay = [];
 let gameState = 'PLAYING';
+let next = 0;
 let guessesRemaining = 12;// if implimented a dificulty setting, this might be smaller
-let currentWord= 'STARTED';// need to make this change every new game somehow
+let currentWord= wordBank[next];// need to make this change every new game somehow
 let winCheck = '';
 let currentWordArray= currentWord.split('');
 let currentWordDisplay = currentWordArray.slice();
@@ -62,31 +66,37 @@ const heavyLiftFunction = function(event) {
     winCount++;
     console.log('they\'ve won the game.');
     messageDisplay7.innerText = 'YOU WIN!!!';
+    next++;
   }
   else if (guessesRemaining === 0){
     gameState = 'LOST'
     console.log('they\'ve lost the game.');
     messageDisplay7.innerText = 'uh oh, you\'ve lost!';
+    next++;
   }
 
 }
 
 const resetGame = function() {
+  if (next === wordBank.length) {
+    next = 0;
+    messageDisplay7.innerText = 'looks like you\'ve gone through the whole list! See if you can remember them all!';
+  }
+  else {messageDisplay7.innerText = '';}
   alreadyGuessedArray = [];
   alreadyGuessedDisplay = [];
   gameState = 'PLAYING';
   guessesRemaining = 12;
-  currentWord= 'STARTED';
+  currentWord= wordBank[next];
   winCheck = '';
   currentWordArray= currentWord.split('');
   currentWordDisplay = currentWordArray.slice();
   for (let i = 0; i<currentWordArray.length; i++){currentWordDisplay[i] = '_';}
-  messageDisplay7.innerText = '';
-  //actually chooses and displays a new word?
+
 }
 
 // Uses `document.querySelector()` to obtain a reference to the HTML elements.
-let targetArea = document.querySelector('#gameName');
+let messageDisplay0 = document.querySelector('#display0');
 let messageDisplay1 = document.querySelector('#display1');
 let messageDisplay2 = document.querySelector('#display2');
 let messageDisplay3 = document.querySelector('#display3');
